@@ -1,0 +1,37 @@
+# --- SECRETS & API KEYS ---
+.env
+config.json
+credentials.json
+
+# --- AI ARTIFACTS (Too large for GitHub) ---
+# We don't upload .pkl files because they can be 50MB-500MB+
+model_artifacts/
+*.pkl
+*.joblib
+
+# --- DATASETS (Massive CSVs) ---
+# Jigsaw and Davidson datasets are way over GitHub's 100MB limit
+datasets/
+*.csv
+*.tsv
+*.xlsx
+
+# --- AUDIO BUFFERS & WHISPER MODELS ---
+# Whisper usually downloads models to a cache folder
+.cache/
+temp_audio/
+*.wav
+*.mp3
+
+# --- PYTHON FLUFF ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.pytest_cache/
+
+# --- OPERATING SYSTEM FILES ---
+.DS_Store
+Thumbs.db
