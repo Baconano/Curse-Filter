@@ -41,7 +41,7 @@ def create_3_tier_dataset():
     targeted_toxic = ["fuck you", "you are a bitch", "you bitch", "shut up pussy", "get out pussy", "kill yourself", "fuck u"]
     slurs = ["bitch", "pussy", "faggot", "nigger", "cunt", "retard", "whore", "fucker", "nigga", "fag", "gay"]
     neutral_you = ["you", "are you", "how are you", "is that you", "thank you", "you are", "you there"]
-    general_cursing = ["fuck", "damn", "shit", "hell", "ass", "fucking hell"]
+    general_cursing = ["fuck", "damn", "shit", "hell", "ass"]
 
     # Boost Slurs & Targeted Attacks to Tier 2 (MUTE)
     # We use 5000 copies to ensure the AI prioritizes these combinations
