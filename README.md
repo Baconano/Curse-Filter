@@ -45,3 +45,44 @@ project/
 └── paper/
     ├── Nguyen_skn1478_Paper.pdf # Final research paper
     └── source_tex/             # LaTeX source files
+```
+
+## Setup and Execution
+
+### Prerequisites
+* **Python 3.10+**: The core environment for execution.
+* **FFmpeg**: A mandatory dependency for the OpenAI Whisper engine to process acoustic signals.
+* **Discord Bot Token**: Required for the system to interface with the Discord API. This should be stored in an `.env` file or configured within `main.py`.
+
+### Installation
+1. **Clone the Repository:**
+   ```bash
+   git clone <repository-url>
+   cd project
+
+### 2. Installation & Dependency Setup
+
+To prepare the environment for the Toxicity Moderation System, follow these steps:
+
+1. **System-Level Dependencies:** Ensure **FFmpeg** is installed on your machine. This is required by the Whisper STT engine for audio decoding.
+   * **Windows (Chocolatey):** `choco install ffmpeg`
+   * **macOS (Homebrew):** `brew install ffmpeg`
+   * **Linux (Ubuntu):** `sudo apt install ffmpeg`
+
+2. **Python Environment:** It is recommended to use a virtual environment (venv) to avoid dependency conflicts.
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate\
+### 3. Core Python Libraries
+
+The system relies on the following key libraries to manage the real-time moderation pipeline:
+
+* **`scikit-learn`**: Powers the **Multinomial Logistic Regression** engine and the **TF-IDF Vectorization** used to categorize text into the three toxicity tiers.
+* **`openai-whisper`**: A robust Speech-to-Text (STT) model used to transcribe live audio streams from Discord voice channels into structured text for analysis.
+* **`PyAudio`**: Facilitates the low-level system audio monitoring, allowing the bot to capture real-time acoustic signals from the user's local environment.
+* **`discord.py`**: The primary API wrapper used to interface with Discord, enabling the bot to execute moderation actions like temporary mutes and warnings.
+* **`joblib`**: Utilized for model persistence, allowing the system to save and load the trained `.pkl` classifier and vectorizer files efficiently.
+
+To install the entire stack, run:
+```bash
+pip install -r code/requirements.txt
